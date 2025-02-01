@@ -9,6 +9,9 @@ class RoleController extends Controller
 {
    function index($id, $name){
 
+      // echo $id;
+      // echo $name;
+
       $roles=[
          ['id'=>1, 'name'=>'admin'],
          ['id'=>2, 'name'=>'Employee'],
@@ -16,7 +19,8 @@ class RoleController extends Controller
          ['id'=>4, 'name'=>'Manager'],
       ];
 
-      return view('test', compact('id', 'name', 'roles' ));
+      //return view('test', compact('id', 'name', 'roles' ));
+      return view('test', ['id'=>$id, 'name'=>$name, 'roles'=>$roles]);
    }
 
 
@@ -30,6 +34,9 @@ class RoleController extends Controller
       return view('roles.index', ['roles'=> $roles]);
    }
 
+
+
+   
    function create(){
       return view('roles.create');
    }
